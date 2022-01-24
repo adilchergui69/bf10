@@ -1,8 +1,9 @@
+
 ////////////////////sort table///////////////////////////
 function sort_Table(e, direction){
     var sort_tbl= e.parentElement.innerText.trim(); 
     if(direction == "desc"){
-      AllData.sort(function(a,b){
+        alldata.sort(function(a,b){
             if(a[sort_tbl].toLowerCase() < b[sort_tbl].toLowerCase()){
               return -1
             }
@@ -10,38 +11,38 @@ function sort_Table(e, direction){
         })
     }
     else{
-      AllData.sort(function(a,b){
+        alldata.sort(function(a,b){
             if(a[sort_tbl].toLowerCase() > b[sort_tbl].toLowerCase()){
               return -1
             }
         })
     }
     document.getElementById("tbody").innerHTML="";
-    table(AllData);
+    getAll(alldata);
     // displayRows(x);
   }
   
   function sort_Table_nbr(e,direction){
     var sort_tbl= e.parentElement.innerText.trim(); 
     if(direction == "desc"){
-      AllData.sort(function(a,b){
-        // if(a[sort_tbl] > b[sort_tbl]){
-        //   return 1
-        // }
-        return  a[sort_tbl] - b[sort_tbl]
+        alldata.sort(function(a,b){
+        if(a[sort_tbl] > b[sort_tbl]){
+          return 1
+        }
+        //return  a[sort_tbl] - b[sort_tbl]
     })
         
     }
     else if(direction == "asc"){
-      AllData.sort(function(a,b){
-            // if(a[sort_tbl] < b[sort_tbl]){
-            //   return -1
-            // }
-            return   b[sort_tbl] - a[sort_tbl]
+        alldata.sort(function(a,b){
+            if(a[sort_tbl] < b[sort_tbl]){
+              return -1
+            }
+            //return   b[sort_tbl] - a[sort_tbl]
         })
     }
     document.getElementById("tbody").innerHTML=""
-    table(AllData)
+    getAll(alldata);
     // displayRows(x)
     
   }
@@ -110,3 +111,42 @@ function getAll() {
 
 // }
 
+
+
+
+        // function sortTable(r, direction){
+        //     if(direction=="desc"){
+        //         DATA.sort(function(a,b){
+        //             if(a[r]>b[r]){
+        //                 return -1;
+        //             }
+        //         })
+        //     }
+        //     else if(direction=="asc"){
+        //         DATA.sort(function(a,b){
+        //             if(a[r]<b[r]){
+        //                 return -1;
+        //             }
+        //         })
+        //     }
+        //     $("tbody").html("");
+        //     fill(DATA);
+        // }
+        // function sortTableNUM(r, direction){
+        //     if(direction=="desc"){
+        //         DATA.sort(function(a,b){
+        //             if(a[r]-b[r]){
+        //                 return -1;
+        //             }
+        //         })
+        //     }
+        //     else if(direction=="asc"){
+        //         DATA.sort(function(a,b){
+        //             if(b[r]-a[r]){
+        //                 return -1;
+        //             }
+        //         })
+        //     }
+        //     $("tbody").html("");
+        //     fill(DATA);
+        // }
